@@ -10,7 +10,10 @@ int main() {
     char name_archive[80];
     FILE *file;
     char word[50];
+    int count = 0;
+    char biggestWord[50];
 
+    printf("=== BINARY SEARCH TREE ===\n\n");
     printf("Enter file name:\n");
     scanf("%s", name_archive);
 
@@ -18,19 +21,26 @@ int main() {
 
     if (file == NULL)
         printf("Can't open %s for reading.\n", name_archive);
-    else
-    {
-        while (fscanf(file, "%s", word) != EOF)
-        {
+    else {
+        fscanf(file, "%s", biggestWord);
+        while (fscanf(file, "%s", word) != EOF) {
+            if (strlen(word) > strlen(biggestWord)) 
+                biggestWord = word;
             printf("%s\n", word);
+
+            count++;
         }
         fclose(file);
     }
-    
-    printf("=== ARVORE DE BUSCA DE TXT ===\n\n");
 
-    printf("=== QUANTIDADE DE PALAVRAS NO TXT ===\n\n");
+    while (count != 21240) {
         
+    }
+
+
+    
+    printf("=== QUANTIDADE DE PALAVRAS NO TXT ===\n\n");
+    printf("%d\n",count);
 
     printf("=== MAIOR PALAVRA DO TEXTO ===\n\n");
 
