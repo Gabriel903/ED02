@@ -12,6 +12,7 @@ int main() {
     char word[50];
     int count = 0;
     char biggestWord[50];
+    Arvore *raiz = NULL;
 
     printf("=== BINARY SEARCH TREE ===\n\n");
     printf("Enter file name:\n");
@@ -22,20 +23,34 @@ int main() {
     if (file == NULL)
         printf("Can't open %s for reading.\n", name_archive);
     else {
-        fscanf(file, "%s", biggestWord);
-        while (fscanf(file, "%s", word) != EOF) {
-            if (strlen(word) > strlen(biggestWord)) 
-                biggestWord = word;
-            printf("%s\n", word);
+        fgets(biggestWord, 50, file);
+        printf("%s\n aquiiiiii a maior palavra", biggestWord);
 
+
+        //throw to an binary tree
+        raiz = cria(*biggestWord);
+        
+
+        
+
+
+
+
+        while (fscanf(file, "%s", word) != EOF) {
+            if(strlen(biggestWord) < strlen(word)) {
+                char wordt[50];
+                strcpy(biggestWord, wordt);
+                printf("%s\nFAUSTAO", wordt);
+             } 
+            printf("%s\n", word);
             count++;
         }
         fclose(file);
     }
 
-    while (count != 21240) {
+    // while (count != 21240) {
         
-    }
+    // }
 
 
     

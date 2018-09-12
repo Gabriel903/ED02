@@ -2,11 +2,11 @@
 #include <stdio.h>
 #include "AB.h"
 
-Arvore *cria(int valor) {
+Arvore *cria(char valor) {
     Arvore *p;
 
     p = (Arvore *) malloc(sizeof(Arvore));
-    p->valor = valor;
+    p->valor[50] = valor;
     p->esq = NULL;
     p->dir = NULL;
 

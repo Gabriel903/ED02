@@ -2,7 +2,7 @@
 #define AB_H_INCLUDED
 
 struct notree {
-   int valor;
+   char valor[50];
    struct notree *esq;
    struct notree *dir;
 };
@@ -10,7 +10,7 @@ struct notree {
 typedef struct notree Arvore;
 
 // Cria um nÛ da ·rvore com o valor especificado. Esq e Dir ficam NULOS.
-Arvore *cria(int valor);
+Arvore *cria(char valor);
 
 // Localiza o nÛ da ·rvore com o valor especificado. Se n„o achar retorna NULO.
 Arvore *localiza(Arvore *r, int valor);
